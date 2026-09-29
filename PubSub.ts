@@ -26,4 +26,4 @@ class PubSub{
 
 }
 
-console.log("PubSub system initialized.");
+export default PubSub;
