@@ -73,30 +73,33 @@ pubSub.subscribe("Assalto em Progresso", boundSystem4Notify);
 
 
 // Simulando a publicação de eventos de trânsito
+
+// Acidente e Centro, sistemas 1 e 4 serão notificados. Sys 1 por tipo de evento e Sys 4 por localização.
 reportTrafficEvent({
   type: "Acidente",
   location: "Centro",
   details: "Dois carros envolvidos, trânsito pesado.",
 });
+
+// Velocidade Excessiva e Rodovia, sistema 2 será notificado.
 reportTrafficEvent({
   type: "Velocidade Excessiva",
   location: "Rodovia",
   details: "Veículo com placa \"ABC-1234\" detectado a 150 km/h, ultrapassando o limite.",
 });
+// Enchente e Avenida, sistemas 1 e 3 serão notificados. Sys 1 por tipo de evento e Sys 3 por localização.
 reportTrafficEvent({
   type: "Enchente",
   location: "Avenida",
   details: "Chuva forte causando alagamentos nas ruas.",
 });
 
-
-console.log("*".repeat(100), `\nViatura Policial 2 saindo dos arredores de Centro.\n`, "*".repeat(100));
-
-
 // Simulando Viatura Policial 2 saindo dos arredores de Centro.
+console.log("*".repeat(100), `\nViatura Policial 2 saindo dos arredores de Centro.\n`, "*".repeat(100));
 pubSub.unsubscribe("Centro", boundSystem4Notify);
 
-// Novo evento no Centro, porem ambas as viaturas sero notificadas.
+
+// Novo evento no Centro, porem ambas as viaturas sero notificadas graças ao tipo do evento.
 reportTrafficEvent({
   type: "Assalto em Progresso",
   location: "Centro",
