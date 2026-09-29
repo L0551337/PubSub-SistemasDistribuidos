@@ -29,5 +29,4 @@ class PubSub{
 
 }
 
-// exportando a classe PubSub para ser utilizada em outros arquivos
 export default PubSub;
