@@ -52,13 +52,13 @@ function reportTrafficEvent(event: TrafficEvent) {
 // criando instâncias dos sistemas assinantes e armazenando as funções de notificação vinculadas
 const centroDeControle = new BasicSubscriber(1, "Sistema de Controle de Tráfego");
 const sistemaDeMultas = new BasicSubscriber(2, "Sistema de Multas de Tráfego");
-const viaturaPoliciail1 = new BasicSubscriber(3, "Sistema da Viatura Policial 1");
-const viaturaPoliciail2 = new BasicSubscriber(4, "Sistema da Viatura Policial 2");
+const viaturaPolicial1 = new BasicSubscriber(3, "Sistema da Viatura Policial 1");
+const viaturaPolicial2 = new BasicSubscriber(4, "Sistema da Viatura Policial 2");
 
 const boundSystem1Notify = centroDeControle.notify.bind(centroDeControle);
 const boundSystem2Notify = sistemaDeMultas.notify.bind(sistemaDeMultas);
-const boundSystem3Notify = viaturaPoliciail1.notify.bind(viaturaPoliciail1);
-const boundSystem4Notify = viaturaPoliciail2.notify.bind(viaturaPoliciail2);
+const boundSystem3Notify = viaturaPolicial1.notify.bind(viaturaPolicial1);
+const boundSystem4Notify = viaturaPolicial2.notify.bind(viaturaPolicial2);
 
 // subscrevendo os sistemas aos eventos de tráfego
 
